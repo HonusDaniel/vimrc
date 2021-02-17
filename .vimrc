@@ -105,10 +105,13 @@ hi User5 ctermbg=black ctermfg=magenta guibg=black guifg=magenta
 function! StatuslineMode()
   let l:mode=mode()
   if l:mode==#"n"
+    hi User2 ctermbg=lightgreen ctermfg=black guibg=lightgreen guifg=black
     return "NORMAL"
   elseif l:mode==?"v"
+    hi User2 ctermbg=lightblue ctermfg=black guibg=lightgreen guifg=black
     return "VISUAL"
   elseif l:mode==#"i"
+    hi User2 ctermbg=yellow ctermfg=black guibg=lightgreen guifg=black
     return "INSERT"
   elseif l:mode==#"R"
     return "REPLACE"
