@@ -37,6 +37,11 @@ set showcmd
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
 let g:user_emmet_leader_key=','
+
+call plug#begin('~/.vim/plugged')
+Plug 'mattn/emmet-vim'
+call plug#end()
+
 " Searching
 nnoremap / /\v
 vnoremap / /\v
