@@ -37,11 +37,6 @@ set showcmd
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
 let g:user_emmet_leader_key=','
-
-call plug#begin('~/.vim/plugged')
-Plug 'mattn/emmet-vim'
-call plug#end()
-
 " Searching
 nnoremap / /\v
 vnoremap / /\v
@@ -71,7 +66,6 @@ set statusline+=%h
 set statusline+=%r
 set statusline+=\ 
 set statusline+=%3*
-set statusline+=%{b:gitbranch}
 set statusline+=%1*
 set statusline+=%4*
 set statusline+=%F
@@ -126,24 +120,4 @@ function! StatuslineMode()
   endif
 endfunction
 
-function! StatuslineGitBranch()
-  let b:gitbranch=""
-  if &modifiable
-    try
-      let l:dir=expand('%:p:h')
-      let l:gitrevparse = system("git -C ".l:dir." rev-parse --abbrev-ref HEAD")
-      if !v:shell_error
-        let b:gitbranch="(".substitute(l:gitrevparse, '
-', '', 'g').") "
-      endif
-    catch
-    endtry
-  endif
-endfunction
-
-
-augroup GetGitBranch
-  autocmd!
-  autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
-augroup END
 
