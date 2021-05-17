@@ -38,8 +38,14 @@ set showcmd
 set listchars=tab:▸\ ,eol:¬
 let g:user_emmet_leader_key=','
 
-call plug#begin('~/.vim/plugged')
-Plug 'mattn/emmet-vim'
+" call plug#begin('~/.vim/plugged')
+" Plug 'mattn/emmet-vim'
+" call plug#end()
+
+" NerdTree
+call plug#begin()
+  Plug 'preservim/nerdtree'
+  Plug 'mattn/emmet-vim'
 call plug#end()
 
 " Searching
@@ -124,5 +130,4 @@ function! StatuslineMode()
     return "SHELL"
   endif
 endfunction
-
 
