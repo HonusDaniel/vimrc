@@ -13,8 +13,6 @@ set ruler
 
 set encoding=utf-8
 " Spaces and whatnots
-set wrap
-set textwidth=79
 set formatoptions=tcqrn1
 set tabstop=2
 set shiftwidth=2
