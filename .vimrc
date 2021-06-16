@@ -3,9 +3,11 @@ set number
 set modelines=0
 color desert
 
+set number relativenumber
+
 " Custom keymaps
-nnoremap <A-Right> :tabnext<CR>
-nnoremap <A-Left> :tabprevious<CR>
+nnoremap <A-right> :tabnext<CR>
+nnoremap <A-left> :tabprevious<CR>
 nnoremap T :tabnew<CR>
 
 " Show file stats
@@ -128,4 +130,5 @@ function! StatuslineMode()
     return "SHELL"
   endif
 endfunction
+
 
